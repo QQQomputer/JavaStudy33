@@ -3,7 +3,7 @@ package com.gom.s1.student;
 public class StudentView {
 
 	public void viewStudents(Student[] stus) {		
-		for(int i=0;i<2;i++) {
+		for(int i=0;i<stus.length;i++) {
 		System.out.println("이름 : "+stus[i].name);
 		System.out.println("번호 : "+stus[i].num);
 		System.out.println("국어 : "+stus[i].kor);

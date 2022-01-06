@@ -19,32 +19,30 @@ public class StudentUtil {
 		//입력 받은 번호와 일치하는 학생을 찾아서 리턴
 
 		System.out.println("학생수는 몇명입니까?");
-		int num = sc.nextInt();
+		int num = this.sc.nextInt();///
 		Student [] stus = new Student[num];
 		
 		for(int i =0; i<stus.length;i++) {
 			Student stu = new Student();
-			stus[i]=stu;
+			
 			System.out.println("이름을 입력해주세요");
-			stus[i].name = sc.next();
+			stu.name = sc.next();
 			System.out.println("번호를 입력해주세요");
-			stus[i].num = sc.nextInt();
+			stu.num = sc.nextInt();
 			System.out.println("국어점수를 입력해주세요");
-			stus[i].kor = sc.nextInt();
+			stu.kor = sc.nextInt();
 			System.out.println("영어점수를 입력해주세요");
-			stus[i].eng = sc.nextInt();
+			stu.eng = sc.nextInt();
 			System.out.println("수학점수를 입력해주세요");
-			stus[i].math = sc.nextInt();
+			stu.math = sc.nextInt();
 			stu.makeTotal();
-				
+			stus[i]=stu;	
 		}
 		return stus;		
 	}		
 		////////////////void 씀
 	public Student search(Student [] stus) {		
-		StudentView sv = new StudentView();
-		Student stu = null;			/////////////////////////////////////////?
-		
+		Student stu = null;			/////////////////////////////////////////?		
 		System.out.println("검색하실 학생의 번호를 입력해주세요");
 		int num = sc.nextInt();
 		boolean flag = true;

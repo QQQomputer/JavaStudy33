@@ -24,6 +24,8 @@ public class StudentMain {
 	
 		
 		stuc.start();
+		Student stu = new Student();/////
+		
 								
 		System.out.println("종료");
 		

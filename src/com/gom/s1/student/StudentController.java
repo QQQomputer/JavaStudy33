@@ -7,18 +7,20 @@ import java.util.Scanner;
 public class StudentController {
 
 	public void start() {
-		
+		Scanner sc = new Scanner(System.in);
+		boolean check = true;		
 		StudentUtil su = new StudentUtil();
-		Student [] stus = null;
 		StudentView  sv = new StudentView();
-		boolean check = true;
+		Student [] stus = null;
+		//Student stu;//
+		
 		while(check) {
 			
 			System.out.println("1. 학생들의 정보 입력");
 			System.out.println("2. 학생들의 정보 출력");
 			System.out.println("3. 학생정보 검색 출력");			
 			System.out.println("4. 프 로 그 램  종료");
-			Scanner sc = new Scanner(System.in);
+			
 			
 			int select = sc.nextInt();
 			
@@ -40,17 +42,14 @@ public class StudentController {
 				break;
 			
 			case 3:
-				
-
-				
 				if(stus==null) {
 					sv.viewMessage("학생 정보가 없습니다.");
 					continue;
 				}
-				
-				if(stus != null) {
+				Student stu = su.search(stus);
+				if(stu != null) {
 					System.out.println("검색");
-					su.search(stus);
+					sv.search(stu);
 					break;
 				}else {
 					sv.viewMessage("학생정보를 먼저 입력하세요");

@@ -9,10 +9,10 @@ public class SquareMain {
 		//하나라도 틀리면 false를 리턴
 		//매개변수
 		
-		Square s1 = new Square();
+		Square s1 = new Square(); // 멤버변수 선언하고 써주려면 new로 객체생성을 해줘야함
 		
 		s1.garo=4;
-		s1.sero=4;
+		s1.sero=5;
 		
 		Square s2 = new Square();
 		s2.garo=4;
@@ -24,7 +24,8 @@ public class SquareMain {
 		
 		boolean j = s1.same(s2);
 		System.out.println(j);
-		
+		j = s2.same(s1);
+		System.out.println(j);
 		
 		
 	}

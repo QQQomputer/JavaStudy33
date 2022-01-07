@@ -5,9 +5,10 @@ import java.util.Scanner;
 public class CarMain {
 
 	public static void main(String[] args) {
-		
+		Car.company="BMW";
 		//변수 선언 = new 생성자호출
 		Car car = new Car();
+		//car.company="bmw";
 		car.info();
 		
 		Car car2 = new Car("k5");		

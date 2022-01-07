@@ -3,7 +3,7 @@ package com.gom.s2.constructor;
 public class Car {
 
 	String brand;
-	String company;	
+	public static String company="Kia";	
 	int cc;
 	String color;
 	
@@ -35,7 +35,7 @@ public class Car {
 		System.out.println("3---------");
 	}
 	public Car(String brand, String color, int cc) {
-		this.company="kia";
+
 		this.brand=brand;
 		this.color=color;
 		this.cc=cc;
@@ -46,7 +46,7 @@ public class Car {
 	//멤버메서드
 	public void info() {
 		System.out.println("멤버메서드");
-		System.out.println(this.company);
+		System.out.println(Car.company);
 		System.out.println(this.brand);
 		System.out.println(this.color);
 		System.out.println(this.cc);

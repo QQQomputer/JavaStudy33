@@ -2,61 +2,57 @@ package com.gom.s1.student;
 
 import java.util.Scanner;
 
-
-
 public class StudentController {
 
 	public void start() {
 		Scanner sc = new Scanner(System.in);
-		boolean check = true;		
+		boolean check = true;
 		StudentUtil su = new StudentUtil();
-		StudentView  sv = new StudentView();
-		Student [] stus = null;
-		//Student stu;//
-		
-		while(check) {
-			
+		StudentView sv = new StudentView();
+		Student[] stus = null;
+		Student stu=null;
+
+		while (check) {
+
 			System.out.println("1. 학생들의 정보 입력");
 			System.out.println("2. 학생들의 정보 출력");
-			System.out.println("3. 학생정보 검색 출력");			
+			System.out.println("3. 학생정보 검색 출력");
 			System.out.println("4. 프 로 그 램  종료");
-			
-			
+
 			int select = sc.nextInt();
-			
-			switch(select) {
-			
-			case 1: 
-				System.out.println("입력");				
-				stus = su.makeStudents();						
+
+			switch (select) {
+
+			case 1:
+				System.out.println("입력");
+				stus = su.makeStudents();
 				break;
 			case 2:
-				
-				if(stus != null) {
+
+				if (stus != null) {
 					System.out.println("출력");
 					sv.viewStudents(stus);
 					break;
-				}else {
+				} else {
 					sv.viewMessage("학생정보를 먼저 입력하세요");
 				}
 				break;
-			
+
 			case 3:
-				if(stus==null) {
+				if (stus == null) {
 					sv.viewMessage("학생 정보가 없습니다.");
 					continue;
 				}
-				Student stu = su.search(stus);
-				if(stu != null) {
+				stu = su.search(stus);
+				if (stu != null) {
 					System.out.println("검색");
 					sv.search(stu);
 					break;
-				}else {
+				} else {
 					sv.viewMessage("학생정보를 먼저 입력하세요");
 				}
 				break;
-				
-				
+
 //				boolean flag = true;
 //				System.out.println("검색할 학생의 번호를 입력하세요");
 //				int num = sc.nextInt();
@@ -75,13 +71,12 @@ public class StudentController {
 				break;
 			default:
 				System.out.println("잘못 입력하셨습니다.");
-			}//switch case 끝						
-			
+			}// switch case 끝
+
 		}
-		
+
 	}
-	
-	
+
 }
 //for(int i = 0;i<stus.length;i++) {
 //	System.out.println(i+1+"번째 학생의 이름을 입력해주세요");
